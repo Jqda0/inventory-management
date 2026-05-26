@@ -121,26 +121,27 @@ const handleLogout = () => {
 }
 
 .profile-button {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 0.5rem 0.875rem;
-  background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
+  padding: 0.5rem 0.625rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 7px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.15s ease;
   font-family: inherit;
 }
 
 .profile-button:hover {
-  background: #f8fafc;
-  border-color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .avatar {
-  width: 32px;
-  height: 32px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
   color: white;
@@ -148,19 +149,27 @@ const handleLogout = () => {
   align-items: center;
   justify-content: center;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 0.688rem;
   letter-spacing: 0.025em;
+  flex-shrink: 0;
 }
 
 .profile-name {
-  font-size: 0.875rem;
+  font-size: 0.813rem;
   font-weight: 500;
-  color: #0f172a;
+  color: #cbd5e1;
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: left;
 }
 
 .chevron {
-  color: #64748b;
+  color: rgba(148, 163, 184, 0.6);
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .chevron-open {
@@ -168,15 +177,15 @@ const handleLogout = () => {
 }
 
 .dropdown-menu {
-  position: absolute;
-  top: calc(100% + 0.5rem);
-  right: 0;
+  position: fixed;
+  bottom: 1rem;
+  left: calc(var(--sidebar-width) + 0.5rem);
   min-width: 280px;
   background: white;
   border: 1px solid #e2e8f0;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.18);
+  z-index: 9999;
   overflow: hidden;
 }
 
